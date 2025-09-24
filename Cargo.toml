@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "codespan",
+    "codespan-lsp", 
+    "codespan-reporting"
+]
+resolver = "2"
