@@ -38,12 +38,9 @@ optional = true
 features = [ "derive", "alloc",]
 
 [dependencies.termcolor]
-path = "../../../forks/termcolor"
+git = "https://github.com/cyrup-ai/termcolor"
+branch = "main"
 optional = true
-
-[dependencies.zeroshot-workspace-hack]
-version = "0.1"
-path = "../../../workspace-hack"
 
 [lints.clippy]
 alloc_instead_of_core = "warn"
