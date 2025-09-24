@@ -1,0 +1,51 @@
+[package]
+name = "codespan-reporting"
+version = "0.12.0"
+readme = "../README.md"
+license = "Apache-2.0"
+authors = [ "Brendan Zabarauskas <bjzaba@yahoo.com.au>",]
+description = "Beautiful diagnostic reporting for text-based programming languages"
+homepage = "https://github.com/brendanzab/codespan"
+repository = "https://github.com/brendanzab/codespan"
+documentation = "https://docs.rs/codespan-reporting"
+exclude = [ "assets/**",]
+edition = "2024"
+rust-version = "1.85.0"
+
+[dependencies]
+unicode-width = "0.2.1"
+
+[dev-dependencies]
+pico-args = "0.5.0"
+anyhow = "1.0.100"
+insta = "1.43.2"
+lazy_static = "1.5.0"
+peg = "0.8.5"
+rustyline = "17.0.1"
+unindent = "0.2.4"
+
+[features]
+default = [ "std", "termcolor",]
+std = [ "serde?/std",]
+termcolor = [ "std", "dep:termcolor",]
+serialization = [ "serde",]
+ascii-only = []
+
+[dependencies.serde]
+version = "1.0.226"
+default-features = false
+optional = true
+features = [ "derive", "alloc",]
+
+[dependencies.termcolor]
+path = "../../../forks/termcolor"
+optional = true
+
+[dependencies.zeroshot-workspace-hack]
+version = "0.1"
+path = "../../../workspace-hack"
+
+[lints.clippy]
+alloc_instead_of_core = "warn"
+std_instead_of_alloc = "warn"
+std_instead_of_core = "warn"
